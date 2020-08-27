@@ -14,7 +14,7 @@ https://www.dropbox.com/s/cnk93sf0fqyybdp/demoMobile.mov?dl=0
 With this development, a worker can register the entry time, the out time and the lunch moments.
 
 Some plus feature:
-* I created my own Api with Node.
+* I created my own Api.
 * There is a timer that shows the worker on the screen the time that he is working so far on that day
 * Can observe the record of all the worked days and know if it is below its expected hours or not.
 * Can register and login a worker
