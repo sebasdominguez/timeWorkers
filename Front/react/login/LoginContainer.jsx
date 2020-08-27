@@ -40,7 +40,9 @@ const LoginContainer = ({ setLogin, goRegister, userFail, user, history }) => {
   }, []);
 
   useEffect(() => {
-    if(userFail) setFailed(userFail)
+    if(userFail) {
+      alert('Try again, please!')
+      setFailed(userFail)}
     }, [userFail]);
 
   const handleSubmit = (event) => {
