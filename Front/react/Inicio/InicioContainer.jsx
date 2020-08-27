@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const InicioContainer = ({setDatosUser, auth, setBooleano, hrsExpected, hrsWorked, entry, out, worker, fetchRegistry, changeLunch, lunch, workRegistry}) => {
 
-  const [status, setStatus] = useState(false)  // status false --> oowlish worker is not working
+  const [status, setStatus] = useState(false)  // status false --> worker is not working
   const [onLunch, setOnLunch] = useState(false)
   const [arrive, setArrive] = useState('')
 

@@ -1,4 +1,4 @@
-# CHALLENGE TIME-WORKERS
+# TIME-WORKERS
 
 Demo Videos
 
@@ -10,8 +10,6 @@ https://www.dropbox.com/s/cnk93sf0fqyybdp/demoMobile.mov?dl=0
 
 
 # Intro
-
-Web application created for the Oowlish Challenge.
 
 With this development, a worker can register the entry time, the out time and the lunch moments.
 
