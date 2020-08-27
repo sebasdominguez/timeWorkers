@@ -1,11 +1,11 @@
-# Sebastian Dominguez OOWLISH CHALLENGE
+# CHALLENGE TIME-WORKERS
 
 Demo Videos
 
-Version Web Demo:
+* Version Web Demo:
 https://www.dropbox.com/s/2au7ihxlezeh4wi/demoWeb.mov?dl=0
 
-Version Mobile Demo:
+* Version Mobile Demo:
 https://www.dropbox.com/s/cnk93sf0fqyybdp/demoMobile.mov?dl=0
 
 
@@ -24,7 +24,7 @@ Some plus feature:
 
 ## Techs
 
-Some technologies used: React-Redux, Sequelize, Express, Node.
+Some technologies used: React, React-Redux, Sequelize, Express, Node.
 
 React-Hooks will be found in the code.
 
@@ -32,8 +32,10 @@ For the style I have decided to use 100% Styled Components and Sass.
 
 LocalStorage, History and others are also implemented.
 
+Docker.
 
-### Star Point
+
+### Start Point
 
 * Clone your fork to your own machine
 
