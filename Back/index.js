@@ -23,6 +23,7 @@ app.use(cookieParser());
 const config = { origin: 'http://localhost:8080',  credentials: true };
 
 app.use(cors(config));
+
 passport.use(
   new LocalStrategy(
     { usernameField: "email", passwordField: "password" },
@@ -34,7 +35,7 @@ passport.use(
       })
         .then((user) => {
           if (!user) {
-            return done(null, false, { message: "Incorrect username." });
+            return done(null, false, { message: "Incorrect user email." });
           }
           if (!user.validPassword(inputPassword)) {
             return done(null, false, { message: "Incorrect password." });

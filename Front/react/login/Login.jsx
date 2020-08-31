@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   DivContenedor,
   DivImage,
@@ -12,7 +12,6 @@ import {
   Form,
   FormInput,
   SubInput,
-  FormButtom,
   Button,
   Label,
   Input,
@@ -21,37 +20,48 @@ import {
   DivInput2,
   DivInput3,
   Required,
-  Buttons,
-  ButtonRegister
-} from './style';
-import { Link } from 'react-router-dom';
+  ButtonRegister,
+} from "./style";
 
-export default ({ handleSubmit, handleChange, userFail, valor, wantRegister, register, registered }) => {
+export default ({
+  handleSubmit,
+  handleChange,
+  userFail,
+  valor,
+  register,
+  registered,
+  setRegister,
+}) => {
   return (
     <DivContenedor>
       <DivImage>
-          <DivLogoImg>
-            <Image src='https://www.oowlish.com/wp-content/uploads/2017/10/header-logo-light.png' alt="Logo" />
-          </DivLogoImg>
+        <DivLogoImg>
+          <Image
+            src="https://www.oowlish.com/wp-content/uploads/2017/10/header-logo-light.png"
+            alt="Logo"
+            onClick={() => window.location.reload(false)}
+          />
+        </DivLogoImg>
       </DivImage>
       <LoggingForm>
         <DivForm>
           <DivTitle>
-            {register === false ? 
-              <H1>Login</H1>
-            :
-              <>{registered == false ? 
-                <H1>Register</H1>
-                :
-                <H1>Excelente! Let´s Login</H1>
-               }
-              </>
-            }
+            {register ? (
+              <H1>Register</H1>
+            ) : (
+              <div>
+                {registered ? ( // user asked to register and did not register yet
+                  <H1>Excelent! Now let´s Login</H1>
+                ) : (
+                  <H1>Login</H1>
+                )}
+              </div>
+            )}
             <H3>Enter your data</H3>
           </DivTitle>
           <Form onSubmit={handleSubmit}>
             <FormInput>
-              { register === true ? 
+              {register ? (
                 <SubInput>
                   <Label colors={valor.email}>Name</Label>
                   <DivInput>
@@ -63,13 +73,14 @@ export default ({ handleSubmit, handleChange, userFail, valor, wantRegister, reg
                           name="name"
                           onChange={handleChange}
                         />
-                        {valor.name === '' ? <Required>Required</Required> : null}
+                        {valor.name === "" ? (
+                          <Required>Required</Required>
+                        ) : null}
                       </DivInput2>
                     </DivInput1>
                   </DivInput>
                 </SubInput>
-                : null 
-              }
+              ) : null}
               <SubInput>
                 <Label colors={valor.email}>Email</Label>
                 <DivInput>
@@ -82,7 +93,9 @@ export default ({ handleSubmit, handleChange, userFail, valor, wantRegister, reg
                         name="email"
                         onChange={handleChange}
                       />
-                      {valor.email === '' ? <Required>Required</Required> : null}
+                      {valor.email === "" ? (
+                        <Required>Required</Required>
+                      ) : null}
                     </DivInput2>
                   </DivInput1>
                 </DivInput>
@@ -99,33 +112,35 @@ export default ({ handleSubmit, handleChange, userFail, valor, wantRegister, reg
                         name="password"
                         onChange={handleChange}
                       />
-                      {valor.password === '' ? <Required>Required</Required> : null}
+                      {valor.password === "" ? (
+                        <Required>Required</Required>
+                      ) : null}
                     </DivInput2>
                   </DivInput1>
                 </DivInput>
               </SubInput>
             </FormInput>
-            {userFail === false ? 
-              <>
-              { register === true && registered === false ? 
-                <ButtonRegister type="submit"> Register </ButtonRegister>
-                :
-                <Button type="submit"> Login </Button>
-              }
-              </>
-              :
-              <>
-                {userFail === true && register === true ? 
-                <Button type="submit"> Register </Button> 
-                :
-                <Button type="submit"> Login </Button> 
-                }
-              </>
-            }
-            { register === false && registered === false ? <ButtonRegister onClick={wantRegister}> Want Register ? </ButtonRegister> : null }
-          
+            {register ? (
+              <Button type="submit"> Register </Button>
+            ) : userFail ? (
+              <Button userFail={userFail} type="submit">
+                {" "}
+                Try again!{" "}
+              </Button>
+            ) : (
+              <Button type="submit"> Login </Button>
+            )}
           </Form>
         </DivForm>
+        {register ? (
+          <ButtonRegister onClick={() => setRegister(false)}>
+            Back to Login
+          </ButtonRegister>
+        ) : (
+          <ButtonRegister onClick={() => setRegister(true)}>
+            Want Register ?
+          </ButtonRegister>
+        )}
       </LoggingForm>
     </DivContenedor>
   );

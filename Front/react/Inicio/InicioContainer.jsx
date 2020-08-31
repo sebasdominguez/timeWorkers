@@ -73,6 +73,7 @@ const InicioContainer = ({setDatosUser, auth, setBooleano, hrsExpected, hrsWorke
   }, []);
 
   const handleClick = () => {
+    if(onLunch)setOnLunch(false)
     setStatus(!status)  
   }
 
